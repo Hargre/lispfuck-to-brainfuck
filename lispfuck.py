@@ -1,5 +1,4 @@
 from sys import argv
-from interpreter import Interpreter
 import pprint
 import ox
 
@@ -66,5 +65,3 @@ tokens = [token for token in tokens if token.type != 'COMMENT' and token.type !=
 ast = parser(tokens)
 print(ast)
 
-interpreter = Interpreter(ast)
-interpreter.eval(interpreter.command_list)

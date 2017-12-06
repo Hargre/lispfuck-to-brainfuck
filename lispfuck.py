@@ -1,6 +1,7 @@
 from sys import argv
 import pprint
 import ox
+from compiler import Compiler
 
 file_name, lf_source = argv
 
@@ -65,3 +66,5 @@ tokens = [token for token in tokens if token.type != 'COMMENT' and token.type !=
 ast = parser(tokens)
 print(ast)
 
+compiler = Compiler(ast, "test.bf")
+compiler.compile()
